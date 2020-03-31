@@ -23,12 +23,18 @@
 #ifndef __WS2812B_CONF_H
 #define __WS2812B_CONF_H
 
-#include <stm32f10x.h>
-#include <stm32f10x_rcc.h>
-#include <stm32f10x_gpio.h>
-#include <stm32f10x_tim.h>
-#include <stm32f10x_dma.h>
-#include <misc.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <stm32f4xx.h>
+#include <stm32f4xx_hal_rcc.h>
+#include <stm32f4xx_hal_gpio.h>
+#include <stm32f4xx_hal_tim.h>
+#include <stm32f4xx_hal_dma.h>
+//#include <misc.h>
+
+#define NUM_LEDS    4
 
 #define WS2812B_USE_GAMMA_CORRECTION
 #define WS2812B_USE_PRECALCULATED_GAMMA_TABLE
@@ -66,5 +72,9 @@
 
 #define WS2812B_PULSE_HIGH      21
 #define WS2812B_PULSE_LOW       9
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //__WS2812B_CONF_H
